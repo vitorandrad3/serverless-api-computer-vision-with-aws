@@ -1,0 +1,52 @@
+service: vision
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  health:
+    handler: src.services.template.handler.health
+    events:
+      - httpApi:
+          path: /
+          method: get
+  v1Description:
+    handler: src.services.template.handler.v1_description
+    events:
+      - httpApi:
+          path: /v1
+          method: get
+  v2Description:
+    handler: src.services.template.handler.v2_description
+    events:
+      - httpApi:
+          path: /v2
+          method: get
+  v1Vision:
+    handler: src.services.v1_vision.handler.v1_vision
+    events:
+      - httpApi:
+          path: /v1/vision
+          method: post
+  v2Vision:
+    handler: src.services.v2_vision.handler.v2_vision
+    events:
+      - httpApi:
+          path: /v2/vision
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+
+custom:
+  pythonRequirements:
+     dockerizePip: true
+
+package:
+  exclude:
+    - ./**
+  include:
+    - src/**
