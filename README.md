@@ -1,6 +1,7 @@
 O projeto tem o objetivo de criar uma API utilizando o serviço de visão computacional da AWS, o Rekognition, para classificar e recuperar labels de imagens e rostos.
 
 ## Arquitetura do Projeto
+![image](https://github.com/vitorandrad3/serverless-api-computer-vision-with-aws/assets/121817324/cd1edcd6-c83f-48d2-8742-6eabc4058001)
 
 
 
@@ -117,5 +118,6 @@ O projeto tem o objetivo de criar uma API utilizando o serviço de visão comput
 ```
 
 ## Coverage dos testes:
+![image](https://github.com/vitorandrad3/serverless-api-computer-vision-with-aws/assets/121817324/21af43da-50ec-423e-86f0-9ed09febda6f)
 
 
